@@ -86,108 +86,114 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Form _formLogin(context) {
-    return Form(
-      child: Column(
-        children: <Widget>[
-          InputCustom(
-            icon: EvaIcons.emailOutline,
-          ),
-          InputCustom(
-            icon: EvaIcons.lockOutline,
-          ),
-          SizedBox(height: 23,),
-          Hero(
-            tag: "singin",
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
-              child: InkWell(
-                onTap: (){
-                  push(context, Routes(), false);
-                },
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(219, 42, 42, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  height: 50,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 5,
-                        child: Text(
-                          "Entrar",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'AirbnbCereal',
-                              fontWeight: FontWeight.w600),
-                          textAlign: TextAlign.center,
-                        ),
-                      )
-                    ],
+  _formLogin(context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40),
+      child: Form(
+        child: Column(
+          children: <Widget>[
+            InputCustom(
+              icon: EvaIcons.emailOutline,
+            ),
+            InputCustom(
+              icon: EvaIcons.lockOutline,
+            ),
+            SizedBox(height: 23,),
+            Hero(
+              tag: "singin",
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: InkWell(
+                  onTap: (){
+                    push(context, Routes(), false);
+                  },
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(219, 42, 42, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                    height: 50,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 5,
+                          child: Text(
+                            "Entrar",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'AirbnbCereal',
+                                fontWeight: FontWeight.w600),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
 
-  Form _formCadastro(context) {
-    return Form(
-      child: Column(
-        children: <Widget>[
-          InputCustom(
-            icon: EvaIcons.personOutline,
-          ),
-          InputCustom(
-            icon: EvaIcons.lockOutline,
-          ),
-          InputCustom(
-            icon: EvaIcons.emailOutline,
-          ),
-          InputCustom(
-            icon: EvaIcons.emailOutline,
-          ),
-          SizedBox(height: 23,),
-          Hero(
-            tag: "singin",
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40),
-              child: InkWell(
-                onTap: (){
-                  push(context, Routes(), false);
-                },
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(219, 42, 42, 1),
-                      borderRadius: BorderRadius.all(Radius.circular(5.0))),
-                  height: 50,
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 5,
-                        child: Text(
-                          "Entrar",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'AirbnbCereal',
-                              fontWeight: FontWeight.w600),
-                          textAlign: TextAlign.center,
-                        ),
-                      )
-                    ],
+  _formCadastro(context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40),
+      child: Form(
+        child: Column(
+          children: <Widget>[
+            InputCustom(
+              icon: EvaIcons.personOutline,
+            ),
+            InputCustom(
+              icon: EvaIcons.lockOutline,
+            ),
+            InputCustom(
+              icon: EvaIcons.emailOutline,
+            ),
+            InputCustom(
+              icon: EvaIcons.emailOutline,
+            ),
+            SizedBox(height: 23,),
+            Hero(
+              tag: "singin",
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                child: InkWell(
+                  onTap: (){
+                    push(context, Routes(), false);
+                  },
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(219, 42, 42, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(5.0))),
+                    height: 50,
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          flex: 5,
+                          child: Text(
+                            "Entrar",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'AirbnbCereal',
+                                fontWeight: FontWeight.w600),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
