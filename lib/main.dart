@@ -1,4 +1,4 @@
-import 'package:camelo_app/login/login_page.dart';
+import 'package:camelo_app/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
-        scaffoldBackgroundColor: Colors.white
+        scaffoldBackgroundColor: Colors.grey[50]
       ),
       home: LoginPage(),
     );
