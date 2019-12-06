@@ -27,7 +27,7 @@ class LoginAction extends StatelessWidget {
                   flex: 1,
                   child: Icon(
                     EvaIcons.emailOutline,
-                    size: 35,
+                    size: 30,
                     color: Colors.white,
                   ),
                 ),
@@ -55,7 +55,7 @@ class LoginAction extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 color: Colors.white,
-                border: Border.all(color: Colors.black, width: 1.5),
+                border: Border.all(color: Colors.grey[800], width: 1.5),
                 borderRadius: BorderRadius.all(Radius.circular(5.0))),
             height: 50,
             child: Row(
@@ -66,8 +66,8 @@ class LoginAction extends StatelessWidget {
                   flex: 1,
                   child: Icon(
                     EvaIcons.googleOutline,
-                    size: 35,
-                    color: Colors.black,
+                    size: 30,
+                    color: Colors.grey[800],
                   ),
                 ),
                 Expanded(
@@ -75,7 +75,7 @@ class LoginAction extends StatelessWidget {
                   child: Text(
                     "Continuar com Google",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.grey[800],
                         fontSize: 18,
                         fontFamily: 'AirbnbCereal',
                         fontWeight: FontWeight.w600),

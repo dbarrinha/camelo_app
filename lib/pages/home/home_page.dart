@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
 
   _body() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 10),
       child: CustomScrollView(
         slivers: <Widget>[
           SliverPersistentHeader(
@@ -33,31 +33,39 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SliverPersistentHeader(
-            floating: true,
+            pinned: true,
             delegate: SliverAppBarDelegateCustom(
               maxHeight: 30,
               minHeight: 30,
               child: _filterBar(),
             ),
           ),
+          SliverPersistentHeader(
+            delegate: SliverAppBarDelegateCustom(
+              maxHeight: 5,
+              minHeight: 5,
+              child: Divider(),
+            ),
+          ),
+          SliverPersistentHeader(
+            delegate: SliverAppBarDelegateCustom(
+              maxHeight: 30,
+              minHeight: 30,
+              child: _subTitle("Sugestôes para você"),
+            ),
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Card(
-                  elevation: 0,
-                  color: Colors.transparent,
-                  child: Text(
-                    "Sugestões para você",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w700, color: Colors.grey[800], fontSize: 16),
-                  ),
-                ),
                 Container(
-                  height: 200,
-                  color: Colors.grey[50],
+                  height: 180,
+                  color: Colors.white,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
+                      _cardAD(),
+                      _cardAD(),
+                      _cardAD(),
                       _cardAD(),
                     ],
                   ),
@@ -65,7 +73,85 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: SliverAppBarDelegateCustom(
+              maxHeight: 20,
+              minHeight: 25,
+              child: _subTitle("Mais Produtos"),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                _cardProduct(),
+                _cardProduct(),
+                _cardProduct(),
+                _cardProduct(),
+                _cardProduct(),
+                _cardProduct(),
+                _cardProduct(),
+              ],
+            ),
+          )
         ],
+      ),
+    );
+  }
+
+  Container _subTitle(text) {
+    return Container(
+      color: Colors.white,
+      child: Card(
+        elevation: 0,
+        color: Colors.transparent,
+        child: Text(
+          text,
+          style: TextStyle(
+              fontWeight: FontWeight.w700,
+              color: Colors.grey[800],
+              fontSize: 16),
+        ),
+      ),
+    );
+  }
+
+  Container _cardProduct() {
+    return Container(
+      height: 120,
+      child: Card(
+        elevation: 2,
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: Container(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(8),
+                        bottomLeft: Radius.circular(8)),
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://rollingstone.uol.com.br/media/_versions/coringa_joaquin_phoenix_divulgacao_widelg.jpg"),
+                        fit: BoxFit.cover),
+                  ),
+                ),
+                flex: 4,
+              ),
+              Expanded(
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.all(10),
+                  child: Text("teste"),
+                ),
+                flex: 8,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -73,6 +159,10 @@ class _HomePageState extends State<HomePage> {
   Container _cardAD() {
     return Container(
       child: Card(
+        elevation: 3,
+        shape:  RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
         child: Container(
           decoration: BoxDecoration(),
           child: Column(
@@ -85,6 +175,9 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       width: 200,
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(8),
+                            topRight: Radius.circular(8)),
                         image: DecorationImage(
                             image: NetworkImage(
                                 "https://rollingstone.uol.com.br/media/_versions/coringa_joaquin_phoenix_divulgacao_widelg.jpg"),
@@ -110,7 +203,6 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 flex: 2,
                 child: Container(
-                  color: Colors.yellow,
                   alignment: Alignment.topLeft,
                   //padding: EdgeInsets.all(10),
                   child: Text("teste2"),
@@ -125,7 +217,7 @@ class _HomePageState extends State<HomePage> {
 
   Container _filterBar() {
     return Container(
-      color: Colors.grey[50],
+      color: Colors.white,
       child: Container(
         child: Row(
           children: <Widget>[
@@ -163,7 +255,7 @@ class _HomePageState extends State<HomePage> {
 
   Container _searchBar() {
     return Container(
-      color: Colors.grey[50],
+      color: Colors.white,
       child: Row(
         children: <Widget>[
           Expanded(

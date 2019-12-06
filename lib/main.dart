@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'AirbnbCereal',
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
-        scaffoldBackgroundColor: Colors.grey[50]
+        scaffoldBackgroundColor: Colors.white
       ),
       home: LoginPage(),
     );
