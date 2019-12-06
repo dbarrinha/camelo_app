@@ -17,9 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'AirbnbCereal',
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
-        scaffoldBackgroundColor: Colors.white
+        scaffoldBackgroundColor: Colors.grey[50]
       ),
       home: LoginPage(),
     );
