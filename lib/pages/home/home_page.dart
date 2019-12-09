@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           SliverPersistentHeader(
+            pinned: true,
             delegate: SliverAppBarDelegateCustom(
               maxHeight: 5,
               minHeight: 5,
@@ -188,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                     Hero(
                       tag: tag,
                       child: Container(
-                        width: 200,
+                        width: 250,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(8),
