@@ -1,3 +1,5 @@
+import 'package:camelo_app/pages/details/details_page.dart';
+import 'package:camelo_app/util/navigation.dart';
 import 'package:camelo_app/widget/input_custom_widget.dart';
 import 'package:camelo_app/widget/sliver_appbar_delegate.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -14,12 +16,12 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: null,
-        body: _body(),
+        body: _body(context),
       ),
     );
   }
 
-  _body() {
+  _body(context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10),
       child: CustomScrollView(
@@ -63,10 +65,10 @@ class _HomePageState extends State<HomePage> {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      _cardAD(),
-                      _cardAD(),
-                      _cardAD(),
-                      _cardAD(),
+                      _cardAD(context,"1"),
+                      _cardAD(context,"2"),
+                      _cardAD(context,"3"),
+                      _cardAD(context,"4"),
                     ],
                   ),
                 ),
@@ -84,13 +86,13 @@ class _HomePageState extends State<HomePage> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                _cardProduct(),
-                _cardProduct(),
-                _cardProduct(),
-                _cardProduct(),
-                _cardProduct(),
-                _cardProduct(),
-                _cardProduct(),
+                _cardProduct(context,"5"),
+                _cardProduct(context,"6"),
+                _cardProduct(context,"7"),
+                _cardProduct(context,"18"),
+                _cardProduct(context,"9"),
+                _cardProduct(context,"10"),
+                _cardProduct(context,"11"),
               ],
             ),
           )
@@ -116,48 +118,59 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container _cardProduct() {
-    return Container(
-      height: 120,
-      child: Card(
-        elevation: 2,
-        shape:  RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Container(
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8),
-                        bottomLeft: Radius.circular(8)),
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "https://rollingstone.uol.com.br/media/_versions/coringa_joaquin_phoenix_divulgacao_widelg.jpg"),
-                        fit: BoxFit.cover),
+  _cardProduct(context,tag) {
+    return GestureDetector(
+      onTap: (){
+        push(context, DetailsPage(tag:tag), false);
+      },
+      child: Container(
+        height: 120,
+        child: Card(
+          elevation: 2,
+          shape:  RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          child: Container(
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Hero(
+                    tag: tag,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(8),
+                            bottomLeft: Radius.circular(8)),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                "https://picsum.photos/350?image="+tag),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
                   ),
+                  flex: 4,
                 ),
-                flex: 4,
-              ),
-              Expanded(
-                child: Container(
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.all(10),
-                  child: Text("teste"),
-                ),
-                flex: 8,
-              )
-            ],
+                Expanded(
+                  child: Container(
+                    alignment: Alignment.topLeft,
+                    padding: EdgeInsets.all(10),
+                    child: Text("teste"),
+                  ),
+                  flex: 8,
+                )
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Container _cardAD() {
-    return Container(
+  _cardAD(context,tag) {
+    return GestureDetector(
+      onTap: (){
+        push(context, DetailsPage(tag:tag), false);
+      },
       child: Card(
         elevation: 3,
         shape:  RoundedRectangleBorder(
@@ -172,16 +185,19 @@ class _HomePageState extends State<HomePage> {
                 flex: 10,
                 child: Stack(
                   children: <Widget>[
-                    Container(
-                      width: 200,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8)),
-                        image: DecorationImage(
-                            image: NetworkImage(
-                                "https://rollingstone.uol.com.br/media/_versions/coringa_joaquin_phoenix_divulgacao_widelg.jpg"),
-                            fit: BoxFit.cover),
+                    Hero(
+                      tag: tag,
+                      child: Container(
+                        width: 200,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(8),
+                              topRight: Radius.circular(8)),
+                          image: DecorationImage(
+                              image: NetworkImage(
+                                  "https://picsum.photos/350?image="+tag),
+                              fit: BoxFit.cover),
+                        ),
                       ),
                     ),
                     Positioned(

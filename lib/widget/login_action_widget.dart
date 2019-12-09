@@ -36,10 +36,11 @@ class LoginAction extends StatelessWidget {
                   child: Text(
                     "Continuar com Email",
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'AirbnbCereal',
-                        fontWeight: FontWeight.w600),
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontFamily: 'AirbnbCereal',
+                      fontWeight: FontWeight.w600,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 )
@@ -97,7 +98,11 @@ class LoginAction extends StatelessWidget {
               ),
               child: Text(
                 "Ainda não tem uma conta? Cadastre-se",
-                style: TextStyle(color: Colors.grey[800], fontSize: 15,fontFamily: 'AirbnbCereal',),
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 15,
+                  fontFamily: 'AirbnbCereal',
+                ),
               )),
         ),
       ],

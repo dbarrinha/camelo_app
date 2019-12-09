@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Row _menuBar() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         InkWell(
           onTap: () {
